@@ -83,12 +83,44 @@ function callback_rev(){
 </script>
 <p>
 <form>
-  <input id="word_rev" type="text" size="20">
-  <input type="button" value="Reverse" onClick="callback_rev();">
+  <input id="word_rev" type="text" size="4">
+  <input type="button" value="Reverse Of Word" onClick="callback_rev();">
 </form>
 </p>
 
 <div id="target_rev"></div>
+
+<script type="text/javascript">
+
+document.write('<br><p>Can this number be multipled? ')
+
+function update_multiple(num){
+  var times = Array.from(new Array(20), (x,i) => i + 1);
+  var out = times.map(x => x * num);
+  var out2 = "";  
+  for (var i = 0; i < out.length; i++) {  
+    if (i % 4 == 0) {
+      out2 += "<tr><td>" + out[i] + "</td>";
+    } else if (i + 1 % 4 == 0) {
+      out2 += "<td>" + out[i] + "</td></tr>";
+    } else {
+      out2 += "<td>" + out[i] + "</td>";
+    }  
+  }
+  var table = '<table>' + out2 + '</table>';  
+  return(table)
+};
+function callback_multiple(){
+  var t = document.getElementById("target_multiple");
+  t.innerHTML = update_multiple(document.getElementById('num_multiple').value);
+}
+</script>
+<form>
+  <input id="num_multiple" type="number" size="4">
+  <input type="button" value="Multiples Of Number" onClick="callback_multiple();">
+</form>
+<div id="target_multiple"></div>
+
 
 <script type="text/javascript" src="other_script.js"></script>
 
