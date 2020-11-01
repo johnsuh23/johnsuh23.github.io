@@ -66,29 +66,29 @@ document.write('<p>Right now it is ' + rightNow + '<p>');
 
 <script type="text/javascript">
 
-document.write('<br><p>Is this word reversable')
+document.write('<br><p>Is this word reversible?')
 
 // Basic functions
 
-function update_e1p1(word){
+function update_rev(word){
   var flip = word.split("").reverse().join("");
   var str = word + ' reversed is ' + flip;
   return(str);
 };
 
-function callback_e1p1(){
-  var t = document.getElementById("target_e1p1");
-  t.innerHTML = update_e1p1(document.getElementById('word_e1p1').value);
+function callback_rev(){
+  var t = document.getElementById("target_rev");
+  t.innerHTML = update_rev(document.getElementById('word_rev').value);
 }
 </script>
 <p>
 <form>
-  <input id="word_e1p1" type="text" size="20">
-  <input type="button" value="Reverse" onClick="callback_e1p1();">
+  <input id="word_rev" type="text" size="20">
+  <input type="button" value="Reverse" onClick="callback_rev();">
 </form>
 </p>
 
-<div id="target_e1p1"></div>
+<div id="target_rev"></div>
 
 <script type="text/javascript" src="other_script.js"></script>
 
