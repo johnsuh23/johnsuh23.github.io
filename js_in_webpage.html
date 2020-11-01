@@ -71,8 +71,8 @@ document.write('<br><p>Is this word reversible?')
 // Basic functions
 
 function update_rev(word){
-  var flip = word.split("").reverse().join("");
-  var str = word + ' reversed is ' + flip;
+  var reverse = word.split("").reverse().join("");
+  var str = word + ' reversed is ' + reverse;
   return(str);
 };
 
@@ -107,8 +107,8 @@ function update_multiple(num){
       out2 += "<td>" + out[i] + "</td>";
     }  
   }
-  var table = '<table>' + out2 + '</table>';  
-  return(table)
+  var grid = '<table>' + out2 + '</table>';  
+  return(grid)
 };
 function callback_multiple(){
   var t = document.getElementById("target_multiple");
